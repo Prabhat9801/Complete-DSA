@@ -5,8 +5,8 @@ using namespace std;
 int sum(int arr[],int n,int k){
     int i ;
     int j ;
-for(i=0;i<n;i++){
-    for(j=0;j<n;j++){
+for(i=0;i<n-1;i++){
+    for(j=i+1;j<n;j++){
         if(arr[i]+arr[j]==k && i!=j ) {
             cout<<i<<" "<<j<<endl;
         }
