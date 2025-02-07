@@ -29,15 +29,23 @@ void reverse(node *&start)
 
     else
     {
-        node *temp = start;
+       
+    node *prev = NULL;
+    node *current = start;
+    node *next = NULL;
 
-        for (int i = 1; i<=length; i++)
-        {
-            temp = temp->link;
-        }
-        cout<< temp->info<<endl;
+    while (current != NULL)
+    {
+        next = current->link; // Save next node
+        current->link = prev; // Reverse current node's pointer
+        prev = current;       // Move prev to current
+        current = next;       // Move current to next
+    }
+    start = prev; // Update head to the new first node
 
-        length--;
+        
+
+       
        
     }
 }
@@ -71,6 +79,7 @@ int main()
     cout << endl;
     cout << "Linkedlist after reverse" << endl;
     reverse(start);
+    traverse(start);
     // traverse(start);
     return 0;
 }
